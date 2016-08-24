@@ -1,3 +1,4 @@
+//
 var express = require('express');
 var router = express.Router();
 var passport = require('../config/ppConfig');
@@ -47,5 +48,33 @@ router.get('/logout', function(req, res) {
   req.flash('success', 'Logged out');
   res.redirect('/');
 });
+
+router.get('/facebook', passport.authenticate('facebook', {
+  scope: ['public_profile', 'email']
+}));
+
+router.get('/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/auth/login',
+  failureFlash: 'An error occured, please try again',
+  successFlash: 'Logged in with Facebook'
+}));
+
+router.get('/soundcloud', passport.authenticate('soundcloud', {
+  //scope: ['user']
+}));
+
+router.get('/soundcloud/callback',
+  passport.authenticate('soundcloud', {
+  successRedirect: '/',
+  failureRedirect: '/auth/login',
+  failureFlash: 'An error occured, please try again',
+  successFlash: 'Logged in with Soundcloud'
+}),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
 
 module.exports = router;

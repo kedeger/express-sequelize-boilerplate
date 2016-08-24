@@ -29,12 +29,29 @@ module.exports = function(sequelize, DataTypes) {
           msg: 'Password must be between 8 and 99 characters'
         }
       }
-    }
+    },
+    facebook_Id: {
+      type: DataTypes.STRING,
+    },
+    facebookToken: {
+      type: DataTypes.STRING,
+    },
+    soundcloud_Id: {
+      type: DataTypes.STRING,
+    },
+    soundcloudToken: {
+      type: DataTypes.STRING,
+    },
+
+
+
   }, {
     hooks: {
       beforeCreate: function(createdUser, options, cb) {
-        var hash = bcrypt.hashSync(createdUser.password, 10);
-        createdUser.password = hash;
+        if(createdUser.password) {
+          var hash = bcrypt.hashSync(createdUser.password, 10);
+          createdUser.password = hash;
+        }
         cb(null, createdUser);
       }
     },
