@@ -1,0 +1,50 @@
+<div>
+  <h2 class="artistName">
+    <%= artist.name %>
+  </h2>
+  <img class="artistImg" src="<%= artist.imageUrl %>">
+    <p>
+      <%= artist.description %>
+    </p>
+
+    <!-- for video 1 -->
+    <a class="videoTitle" href="https://www.youtube.com/watch?v=<%= result.items[0].id.videoId %>">
+    <%= result.items[0].snippet.title %>
+    <br>
+    <img class="videoImg" src="<%= result.items[0].snippet.thumbnails.high.url %>">
+    <br>
+    </a>
+    <!-- for video 2 -->
+    <a class="videoTitle" href="https://www.youtube.com/watch?v=<%= result.items[1].id.videoId %>">
+    <%= result.items[1].snippet.title %>
+    <br>
+    <img class="videoImg" src="<%= result.items[1].snippet.thumbnails.high.url %>">
+    <br>
+    </a>
+    <!-- for video 3 -->
+    <a class="videoTitle" href="https://www.youtube.com/watch?v=<%= result.items[2].id.videoId %>">
+    <%= result.items[2].snippet.title %>
+    <br>
+    <img class="videoImg" src="<%= result.items[2].snippet.thumbnails.high.url %>">
+    <br>
+    </a>
+    <!-- for video 4 -->
+    <a class="videoTitle" href="https://www.youtube.com/watch?v=<%= result.items[3].id.videoId %>">
+    <%= result.items[3].snippet.title %>
+    <br>
+    <img class="videoImg" src="<%= result.items[3].snippet.thumbnails.high.url %>">
+    <br>
+    </a>
+    <!-- for video 5 -->
+    <a class="videoTitle" href="https://www.youtube.com/watch?v=<%= result.items[4].id.videoId %>">
+    <%= result.items[4].snippet.title %>
+    <br>
+    <img class="videoImg" src="<%= result.items[4].snippet.thumbnails.high.url %>">
+    <br>
+    </a>
+
+
+
+
+
+</div>

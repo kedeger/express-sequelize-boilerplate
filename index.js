@@ -6,8 +6,11 @@ var passport = require('./config/ppConfig');
 var flash = require('connect-flash');
 var isLoggedIn = require('./middleware/isLoggedIn');
 var app = express();
-
+var path = require('path');
 app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+//app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,6 +42,9 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/', require('./controllers/artists'));
+app.use('/', require('./controllers/videos'));
+
 
 var server = app.listen(process.env.PORT || 3000);
 

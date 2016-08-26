@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Authentication</title>
+    <title>Drip-Drops 206</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+
     <div class="container">
       <!-- <p><strong><%- JSON.stringify(currentUser) %></strong></p> -->
 
@@ -23,9 +25,24 @@
           <div class="alert alert-success"><%= msg %></div>
         <% }); %>
       <% } %>
+      <div id="heading">
+        <h1>Drip-Drops</h1>
+      </div>
 
-      <h1>Authentication</h1>
+      <a href="/auth/signup">Signup.</a>
+    <a href="/auth/login">Login.</a>
+    <a href="/auth/logout">Logout.</a>
+    <br>
+    <a href="/artists">View by Artist.</a>
+    <a href="/videos">Top Music Videos.</a>
+
+
       <%- body %>
+    </div>
+
+
+    <div>
+      <img id="background" src="http://www.seattlefinancial.com/wp-content/uploads/2015/01/cropped-Seattle-Washington-USA.jpg">
     </div>
 
     <script src="//code.jquery.com/jquery.js"></script>

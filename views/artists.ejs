@@ -1,0 +1,16 @@
+<h2>Artists</h2>
+
+<div>
+  <% artists.forEach(function(artist) { %>
+    <h2 class="artistName">
+    <a href="/artists/<%= artist.id %>"><%= artist.name %>
+    </h2>
+    <img class="artistImg" src="<%= artist.imageUrl %>">
+    </a>
+    <br>
+    <p>
+    <%= artist.description %>
+    </p>
+    <hr />
+  <% }) %>
+</div>

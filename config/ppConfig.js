@@ -4,6 +4,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var SoundCloudStrategy = require('passport-soundcloud').Strategy;
 var db = require('../models');
 
+
 passport.serializeUser(function(user, cb) {
   cb(null, user.id);
 });
