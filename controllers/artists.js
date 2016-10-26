@@ -24,7 +24,7 @@ router.get('/artists/:id', function(req, res) {
 
   youTube.setKey('AIzaSyAgFG86aqJTlhK5zuz5j4VgzoVY1-JzefU');
 
-  youTube.search(artist.name + '(official video)', 5, function(error, result) {
+  youTube.search(artist.name + '(official video)', 10, function(error, result) {
     if (error) {
       console.log(error);
     }

@@ -43,7 +43,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/', require('./controllers/artists'));
-app.use('/', require('./controllers/videos'));
+//app.use('/', require('./controllers/videos'));
 
 
 var server = app.listen(process.env.PORT || 3000);
